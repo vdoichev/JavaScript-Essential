@@ -5,7 +5,48 @@
     <title></title>
 
     <script type="text/javascript">
+        // Создание многомерного массива.
+        var table = new Array(5);
 
+        for (var i = 0; i < table.length; i++) { // В таблице 10 строк
+            table[i] = new Array(5);            // В каждой строке 10 столбцов
+        }
+
+        // Инициализация массива.
+        for (var row = 0; row < table.length; row++) {
+            for (var col = 0; col < table[row].length; col++) {                
+                if (row % 2 == 1) {
+                    table[row][col] = Math.floor(Math.random() * 100 ) + 1;
+                }
+                else {
+                    table[row][col] = - Math.floor(Math.random() * 100 ) + 1;
+                }
+            }
+        }
+
+        for (var row = 0; row < table.length; row++) {
+                for (var col = 0; col < table[row].length; col++) {
+                    document.write(' ' +table[row][col]);
+                }
+                document.write("<br/>");
+        }
+
+        document.write("<hr/>");
+
+        for (var row = 0; row < table.length; row++) {
+            for (var col = 0; col < table[row].length; col++) {                
+                if (row == col) {
+                    table[row][col] = ( table[row][col] >= 0 ) ? 1 : 0;                    
+                }
+            }
+        }
+
+        for (var row = 0; row < table.length; row++) {
+                for (var col = 0; col < table[row].length; col++) {
+                    document.write(' ' +table[row][col]);
+                }
+                document.write("<br/>");
+        }
       
     </script>
 
