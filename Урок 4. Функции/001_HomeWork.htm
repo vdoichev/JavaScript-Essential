@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript">
+        /*Создайте четыре функции для арифметических действий: (Add – сложение, Sub – вычитание, Mul – умножение, Div – деление). 
+        Каждая функция должна принимать два параметра и выводить на экран результат вычисления. Функция деления должна делать проверку деления на ноль. 
+        Пользователь вводит значения, над которыми хочет произвести операцию и выбрать саму операцию.*/
+        
+        function add(a, b) {
+            return a + b;
+        }
+
+        function sub(a, b) {
+            return a - b;
+        }
+
+        function mul(a, b) {
+            return a * b;
+        }
+
+        function div(a, b) {
+            return (b !== 0) ? a / b : undefined;
+        }
+
+        var operand1 = prompt("Введите первое число: ");
+        var sign = prompt("Введите знак арифметической операции: + - * /");
+        var operand2 = prompt("Введите второе число: ");
+
+        operand1 = parseInt(operand1);
+        operand2 = parseInt(operand2);
+
+        switch (sign) {
+            case "+":
+                result = add(operand1, operand2);
+                break;
+            case "-":
+                result = sub(operand1, operand2);
+                break;
+            case "*":
+                result = mul(operand1, operand2);
+                break;
+            case "/":
+                result = div(operand1, operand2);
+                break;
+            default:
+                document.write("<p><b style='color:red'>" + sign + "</b> - не является знаком арифметической операции.");
+        }
+
+        if (result != undefined)
+            document.write("<p>" + operand1 + " " + sign + " " + operand2 + " = " + result);
+
+    </script>
+</head>
+<body>
+</body>
+</html>
