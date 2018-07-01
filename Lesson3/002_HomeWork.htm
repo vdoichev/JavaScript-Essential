@@ -5,8 +5,47 @@
     <title></title>
     
     <script type="text/javascript">
+        /*1. Создание массива*/
+        var arr = []; 
+        var subArr = [];
+        var min = 1; 
+        var max = 100; 
+        var sum = 0;
+        var avg = 0;
+
+        arr.length =  prompt("Укажите размер массива",5);
+
         
-      
+        /*2. Заполнение массива произвольными целыми значениями*/
+        for ( i = 0; i < arr.length; i++ ) {
+            arr[i] = Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        
+        document.write("Заполнение массива произвольными целыми значениями - " + arr);
+
+        
+        min = 100; max = 1;
+        for ( i = 0; i < arr.length; i++ ) {
+            /*3. наименьшее значение массива*/
+            min = (arr[i] < min) ? arr[i] : min;
+            /*4. наибольшее значение массива*/
+            max = (arr[i] > max) ? arr[i] : max;
+            /*5. общая сумма элементов*/
+            sum += arr[i]; 
+            /*6. среднее арифметическое всех элементов*/
+            avg = sum / arr.length;
+            /*7. все нечетные значения*/
+            if ( arr[i] % 2 != 0) {
+                subArr.push(arr[i]);
+            }
+        }
+
+        document.write("<p>" + "Наибольшее значение массива - " + max);
+        document.write("<p>" + "Наименьшее значение массива - " + min);
+        document.write("<p>" + "Сумма элементов - " + sum);
+        document.write("<p>" + "среднее арифметическое всех элементов - " + avg);
+
+        document.write("<p>" + "Все нечетные значения - " + subArr);
     </script>
 
 </head>
