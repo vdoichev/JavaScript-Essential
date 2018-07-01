@@ -3,8 +3,46 @@
 <head>
     <title></title>
     <script type="text/javascript">
+        /*Напишите функцию, которая будет принимать число и определять: Является ли введенное число положительным или отрицательным; 
+        Является ли оно простым; Делится ли оно на 2, 5, 3, 6, 9 без остатка */
+        function CheckNumber(num){
+            var arr = [2, 5, 3, 6, 9];
+            var arrRes = [];
 
-        
+            if (num > 0) {
+                document.write("Число "+numb+" положительное!");
+            }else{
+                document.write("Число "+numb+" отрицательное!");
+            }
+            
+            for ( i = 0; i < arr.length; i++){
+                if ( num % arr[i] == 0) {
+                    arrRes.push(arr[i]);
+                }
+            }
+
+            if ( arrRes.length > 0 ){
+                document.write("<p>" +"Число "+numb+" делится на: "+arrRes);
+            }else{
+                document.write("<p>" +"Число "+numb+" не делится на: 2, 5, 3, 6, 9");
+            }
+            
+            var result = (num !== 1);
+            if (result){
+                for ( i = 2; i * i < num; i++){
+                    if (num % i == 0){
+                        result = false;
+                    }
+                }
+            }
+
+            document.write("<p>" +"Число "+numb+ ((!result) ? " не" : "") + " является простым");
+            
+        }
+
+        var numb = prompt("Введите число: ");
+
+        CheckNumber(parseInt(numb));
     </script>
 </head>
 <body>
