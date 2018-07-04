@@ -3,6 +3,29 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
+    
+    <script type="text/javascript">
+        /*Напишите программу, которая будет рассчитывать и выводить на экран количество возможных вариантов доставки товара. 
+            Для решения задачи, используйте факториал N!, рассчитываемый с помощью цикла do-while . */
+        var counter = parseInt(prompt("Введите число"));
+        var factorial = 1;
+
+        
+        var i = counter;
+        do {
+
+            if (i == 0) {
+                factorial = 1;
+                break;
+            }
+
+            factorial = factorial * i;
+            i = i - 1;
+        }
+        while (i > 0);
+        document.write("Факториал числа: " + counter + "! = "+ factorial);
+
+    </script>
 </head>
 <body>
 
